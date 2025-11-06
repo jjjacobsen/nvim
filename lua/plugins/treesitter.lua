@@ -33,7 +33,7 @@ return {
 			"xml",
 			"yaml",
 			"zig",
-			"zsh"
+			"zsh",
 		}
 		ts.setup({ install_dir = vim.fn.stdpath("data") .. "/site" })
 		ts.install(languages)
