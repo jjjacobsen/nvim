@@ -3,7 +3,11 @@ return {
   lazy = false,
   branch = "main",
   build = ":TSUpdate",
-  opts = {
-    ensure_installed = { "python", "javascript" },
-  },
+  config = function()
+    local ts = require("nvim-treesitter")
+    ts.setup({
+      install_dir = vim.fn.stdpath("data") .. "/site",
+    })
+    ts.install({ "rust", "javascript", "zig", "python", "javascript", "bash", "lua" })
+  end,
 }
