@@ -1,5 +1,10 @@
 # jjjacobsen.nvim
 
+<p align="center">
+  <img src="screenshots/Screenshot%202025-11-06%20at%2017.15.42.png" alt="Neovim dashboard" width="48%" />
+  <img src="screenshots/Screenshot%202025-11-06%20at%2017.17.31.png" alt="Editing session" width="48%" />
+</p>
+
 ## Installation
 
 Stealing a page from LazyVim for this clean install
