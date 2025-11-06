@@ -5,7 +5,36 @@ return {
 	build = ":TSUpdate",
 	config = function()
 		local ts = require("nvim-treesitter")
-		local languages = { "bash", "javascript", "lua", "python", "rust", "zig" }
+		local languages = {
+			"bash",
+			"c",
+			"dart",
+			"dockerfile",
+			"go",
+			"hjson",
+			"html",
+			"java",
+			"javascript",
+			"json",
+			"lua",
+			"markdown",
+			"markdown_inline",
+			"nginx",
+			"passwd",
+			"python",
+			"regex",
+			"ruby",
+			"rust",
+			"sql",
+			"ssh_config",
+			"swift",
+			"terraform",
+			"toml",
+			"xml",
+			"yaml",
+			"zig",
+			"zsh"
+		}
 		ts.setup({ install_dir = vim.fn.stdpath("data") .. "/site" })
 		ts.install(languages)
 		vim.api.nvim_create_autocmd("FileType", {
