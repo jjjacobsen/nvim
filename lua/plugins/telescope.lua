@@ -10,7 +10,22 @@ return {
 	},
 	config = function()
 		local telescope = require("telescope")
-		telescope.setup({})
+		local actions = require("telescope.actions")
+
+		telescope.setup({
+			defaults = {
+				mappings = {
+					i = {
+						["<C-j>"] = actions.move_selection_next,
+						["<C-k>"] = actions.move_selection_previous,
+					},
+					n = {
+						["<C-j>"] = actions.move_selection_next,
+						["<C-k>"] = actions.move_selection_previous,
+					},
+				},
+			},
+		})
 		if not pcall(telescope.load_extension, "fzf") then
 			vim.notify(
 				"telescope-fzf-native.nvim not built; run :Lazy build telescope-fzf-native.nvim",
