@@ -1,5 +1,4 @@
 # jjjacobsen.nvim
-I use neovim btw
 
 ## Installation
 
