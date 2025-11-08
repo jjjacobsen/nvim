@@ -1,5 +1,7 @@
 # jjjacobsen.nvim
 
+Minimal, effective, and stylish Neovim config for people who want their editor to stay out of the way.
+
 <p align="center">
   <img src="screenshots/Screenshot%202025-11-08%20at%2006.42.24.png" alt="Dashboard overview" width="48%" />
   <img src="screenshots/Screenshot%202025-11-08%20at%2006.46.42.png" alt="Editing buffer" width="48%" />
@@ -10,11 +12,29 @@
   <img src="screenshots/Screenshot%202025-11-08%20at%2006.48.04.png" alt="ToggleTerm" width="48%" />
 </p>
 
+## Philosophy
+
+Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, there are those who cry out for a minimal alternative. This setup has no file tabs, no file trees, no LSPs, no autocomplete, no debuggers, and no AI. This setup does have fast and fluid text editing capabilities, powerful file finding capacity (telescope), and smooth git integration (lazygit) with a stylistic touch. Stop letting your tools think for you, and instead equip a double-edged sword. A sword that will amplify _your_ skills.
+
+## Plugins
+
+- Comment.nvim
+- dashboard-nvim
+- flash.nvim
+- gitsigns.nvim
+- lazy.nvim
+- lazygit.nvim
+- lualine.nvim
+- nvim-treesitter
+- nvim-web-devicons
+- plenary.nvim
+- telescope-fzf-native.nvim
+- telescope.nvim
+- tokyonight.nvim
+
 ## Installation
 
-Stealing a page from LazyVim for this clean install
-
-- Make a backup of your current Neovim files
+1. Back up your current Neovim files
 
 ```bash
 # required
@@ -26,19 +46,19 @@ mv ~/.local/state/nvim{,.bak}
 mv ~/.cache/nvim{,.bak}
 ```
 
-- Clone the repo
+2. Clone this repo
 
 ```bash
 git clone https://github.com/jjjacobsen/nvim.git ~/.config/nvim
 ```
 
-- Remove the .git folder, so you can add it to your own repo later
+3. Remove the .git folder so you can version your fork later
 
 ```bash
 rm -rf ~/.config/nvim/.git
 ```
 
-- Start Neovim!
+4. Launch Neovim
 
 ```bash
 nvim
