@@ -52,7 +52,7 @@ mv ~/.cache/nvim{,.bak}
 git clone https://github.com/jjjacobsen/nvim.git ~/.config/nvim
 ```
 
-3. Remove the .git folder so you can version your fork later
+3. (Optional) Remove the .git folder so you can version your fork later
 
 ```bash
 rm -rf ~/.config/nvim/.git
