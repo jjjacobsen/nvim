@@ -37,7 +37,7 @@ vim.keymap.set("n", "<leader>ts", function()
 end, { desc = "Show tab settings" })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "lua", "cpp" },
+	pattern = { "lua", "cpp", "hjson" },
 	callback = function()
 		vim.opt_local.tabstop = 4
 		vim.opt_local.shiftwidth = 4
