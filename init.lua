@@ -33,5 +33,14 @@ vim.keymap.set("n", "<leader>cf", function()
 end, { desc = "Copy filename to clipboard" })
 
 vim.keymap.set("n", "<leader>ts", function()
-	vim.cmd("verbose set tabstop? shiftwidth? softtabstop? expandtab?")
+	vim.cmd("verbose set tabstop? shiftwidth? softtabstop? expandtab? filetype?")
 end, { desc = "Show tab settings" })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "lua", "cpp" },
+	callback = function()
+		vim.opt_local.tabstop = 4
+		vim.opt_local.shiftwidth = 4
+		vim.opt_local.softtabstop = 4
+	end,
+})
