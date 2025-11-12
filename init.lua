@@ -16,6 +16,12 @@ vim.keymap.set("n", "<leader>cp", function()
 	print("Copied path: " .. vim.fn.expand("%:p"))
 end, { desc = "Copy full file path to clipboard" })
 
+vim.keymap.set("n", "<leader>cr", function()
+	local path = vim.fn.expand("%:.")
+	vim.fn.setreg("+", path)
+	print("Copied relative path: " .. path)
+end, { desc = "Copy relative file path to clipboard" })
+
 vim.keymap.set("n", "<leader>cf", function()
 	vim.fn.setreg("+", vim.fn.expand("%:t"))
 	print("Copied filename: " .. vim.fn.expand("%:t"))
