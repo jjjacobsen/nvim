@@ -31,3 +31,7 @@ vim.keymap.set("n", "<leader>cf", function()
 	vim.fn.setreg("+", vim.fn.expand("%:t"))
 	print("Copied filename: " .. vim.fn.expand("%:t"))
 end, { desc = "Copy filename to clipboard" })
+
+vim.keymap.set("n", "<leader>ts", function()
+	vim.cmd("verbose set tabstop? shiftwidth? softtabstop? expandtab?")
+end, { desc = "Show tab settings" })
