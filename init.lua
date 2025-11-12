@@ -32,6 +32,10 @@ vim.keymap.set("n", "<leader>cf", function()
 	print("Copied filename: " .. vim.fn.expand("%:t"))
 end, { desc = "Copy filename to clipboard" })
 
+vim.keymap.set("n", "<leader>mk", function()
+	vim.cmd("!mkdir -p %:p:h")
+end, { desc = "Create parent directories for file" })
+
 vim.keymap.set("n", "<leader>ts", function()
 	vim.cmd("verbose set tabstop? shiftwidth? softtabstop? expandtab? filetype?")
 end, { desc = "Show tab settings" })
