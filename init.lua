@@ -40,6 +40,10 @@ vim.keymap.set("n", "<leader>ts", function()
 	vim.cmd("verbose set tabstop? shiftwidth? softtabstop? expandtab? filetype?")
 end, { desc = "Show tab settings" })
 
+vim.keymap.set("n", "<leader>d", function()
+	vim.cmd("Dashboard")
+end, { desc = "Show Dashboard" })
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "lua", "cpp", "hjson" },
 	callback = function()
