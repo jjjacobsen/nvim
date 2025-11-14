@@ -19,12 +19,14 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 ## Plugins
 
 - Comment.nvim
+- auto-session
 - dashboard-nvim
 - flash.nvim
 - gitsigns.nvim
 - lazy.nvim
 - lazygit.nvim
 - lualine.nvim
+- oil.nvim
 - nvim-treesitter
 - nvim-web-devicons
 - plenary.nvim
