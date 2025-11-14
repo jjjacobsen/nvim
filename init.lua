@@ -48,6 +48,10 @@ vim.keymap.set("n", "<leader>bc", function()
 	vim.cmd("%bd")
 end, { desc = "Clear all buffers" })
 
+vim.keymap.set("n", "<leader>o", function()
+	vim.cmd("Oil")
+end, { desc = "Open Oil" })
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "lua", "cpp", "hjson" },
 	callback = function()
