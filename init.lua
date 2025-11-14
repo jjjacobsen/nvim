@@ -44,6 +44,10 @@ vim.keymap.set("n", "<leader>d", function()
 	vim.cmd("Dashboard")
 end, { desc = "Show Dashboard" })
 
+vim.keymap.set("n", "<leader>bc", function()
+	vim.cmd("%bd")
+end, { desc = "Clear all buffers" })
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "lua", "cpp", "hjson" },
 	callback = function()

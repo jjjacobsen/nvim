@@ -26,6 +26,18 @@ return {
 					},
 				},
 			},
+			pickers = {
+				buffers = {
+					mappings = {
+						i = {
+							["<C-w>"] = actions.delete_buffer,
+						},
+						n = {
+							["dd"] = actions.delete_buffer,
+						},
+					},
+				},
+			},
 		})
 		if not pcall(telescope.load_extension, "fzf") then
 			vim.notify(
