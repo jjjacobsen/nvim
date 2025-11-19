@@ -6,6 +6,7 @@ return {
 		keymaps = {
 			["."] = "actions.toggle_hidden",
 		},
+		skip_confirm_for_simple_edits = true,
 	},
 	config = function(_, opts)
 		local util = require("oil.util")
