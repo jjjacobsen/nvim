@@ -57,7 +57,7 @@ return {
 				additional_args = function()
 					return { "--hidden", "--no-ignore" }
 				end,
-				file_ignore_patterns = { ".git/" },
+				file_ignore_patterns = { ".git/", "%.lock$" },
 			})
 		end, { desc = "Telescope live grep all" })
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
