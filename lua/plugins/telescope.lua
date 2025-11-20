@@ -57,7 +57,27 @@ return {
 				additional_args = function()
 					return { "--hidden", "--no-ignore" }
 				end,
-				file_ignore_patterns = { ".git/", "%.lock$" },
+				file_ignore_patterns = {
+					".git/",
+					"%.lock$",
+					".cache/",
+					"node_modules/",
+					"package%-lock%.json",
+					"pnpm%-lock%.yaml",
+					"yarn%.lock",
+					"vendor/",
+					".bundle/",
+					"Pods/",
+					"__pycache__/",
+					"%.pyc$",
+					".mypy_cache/",
+					".pytest_cache/",
+					"%.DS_Store$",
+					"Thumbs%.db$",
+					".idea/",
+					".vscode/",
+					"%.iml$",
+				},
 			})
 		end, { desc = "Telescope live grep all" })
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
