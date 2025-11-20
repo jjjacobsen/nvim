@@ -33,6 +33,7 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 - telescope-fzf-native.nvim
 - telescope.nvim
 - tokyonight.nvim
+- git-blame.nvim
 
 ## Installation
 
