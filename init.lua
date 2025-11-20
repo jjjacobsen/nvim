@@ -57,7 +57,7 @@ vim.keymap.set("n", "<leader>o", function()
 end, { desc = "Open Oil" })
 
 vim.keymap.set("n", "<leader>h", function()
-    vim.cmd("noh")
+	vim.cmd("noh")
 end, { desc = "Clear highlights" })
 
 vim.api.nvim_create_autocmd("FileType", {
