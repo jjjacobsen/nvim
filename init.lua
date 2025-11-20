@@ -16,6 +16,9 @@ vim.g.loaded_ruby_provider = 0
 
 require("config.lazy")
 
+vim.keymap.set("n", "<C-k>", "<C-y>k", { desc = "Scroll up with cursor" })
+vim.keymap.set("n", "<C-j>", "<C-e>j", { desc = "Scroll down with cursor" })
+
 vim.keymap.set("n", "<leader>cp", function()
 	vim.fn.setreg("+", vim.fn.expand("%:p"))
 	print("Copied path: " .. vim.fn.expand("%:p"))
