@@ -37,7 +37,7 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 
 ## Installation
 
-1. Back up your current Neovim files
+1. Back up your current Neovim files (these commands copied from LazyVim's install)
 
 ```bash
 # required
@@ -65,4 +65,34 @@ rm -rf ~/.config/nvim/.git
 
 ```bash
 nvim
+```
+
+### Secondary LazyVim Install
+
+I like to have LazyVim installed on the side under `lvim` that I check every so often to see if I want to add some plugins. This is how to install it without affecting the main nvim config
+
+1. Clone LazyVim to separate directory
+
+```bash
+git clone https://github.com/LazyVim/starter ~/.config/lvim
+```
+
+2. Create file at `~/.local/bin/lvim` with the following content
+
+```bash
+#!/usr/bin/env bash
+export NVIM_APPNAME=lvim
+exec nvim "$@"
+```
+
+3. Make executable
+
+```bash
+chmod +x ~/.local/bin/lvim
+```
+
+4. Launch LazyVim
+
+```bash
+lvim
 ```
