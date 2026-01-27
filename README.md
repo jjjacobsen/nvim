@@ -96,3 +96,15 @@ chmod +x ~/.local/bin/lvim
 ```bash
 lvim
 ```
+
+## Maintenance
+
+- Check the health of the installation with
+
+```bash
+# General
+:checkhealth
+
+# Tree Sitter
+:TSInstallInfo
+```
