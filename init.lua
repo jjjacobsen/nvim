@@ -3,6 +3,18 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
+vim.opt.sessionoptions = {
+	"blank",
+	"buffers",
+	"curdir",
+	"folds",
+	"help",
+	"tabpages",
+	"winsize",
+	"winpos",
+	"terminal",
+	"localoptions",
+}
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
