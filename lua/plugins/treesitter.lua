@@ -1,52 +1,53 @@
-return {
-	"nvim-treesitter/nvim-treesitter",
-	branch = "master",
-	lazy = false,
-	build = ":TSUpdate",
-	config = function()
-		require("nvim-treesitter.install").ts_generate_args = {
-			"generate",
-			"--abi",
-			vim.treesitter.language_version,
-		}
-		require("nvim-treesitter.configs").setup({
-			ensure_installed = {
-				"bash",
-				"c",
-				"dart",
-				"dockerfile",
-				"go",
-				"hjson",
-				"html",
-				"java",
-				"javascript",
-				"json",
-				"lua",
-				"markdown",
-				"markdown_inline",
-				"nginx",
-				"passwd",
-				"python",
-				"regex",
-				"ruby",
-				"rust",
-				"sql",
-				"ssh_config",
-				"swift",
-				"terraform",
-				"toml",
-				"xml",
-				"yaml",
-				"zig",
-			},
-			sync_install = false,
-			auto_install = true,
-			highlight = {
-				enable = true,
-			},
-			indent = {
-				enable = true,
-			},
-		})
-	end,
-}
+-- return {
+-- 	"nvim-treesitter/nvim-treesitter",
+-- 	branch = "master",
+-- 	lazy = false,
+-- 	build = ":TSUpdate",
+-- 	config = function()
+-- 		require("nvim-treesitter.install").ts_generate_args = {
+-- 			"generate",
+-- 			"--abi",
+-- 			vim.treesitter.language_version,
+-- 		}
+-- 		require("nvim-treesitter.configs").setup({
+-- 			ensure_installed = {
+-- 				"bash",
+-- 				"c",
+-- 				"dart",
+-- 				"dockerfile",
+-- 				"go",
+-- 				"hjson",
+-- 				"html",
+-- 				"java",
+-- 				"javascript",
+-- 				"json",
+-- 				"lua",
+-- 				"markdown",
+-- 				"markdown_inline",
+-- 				"nginx",
+-- 				"passwd",
+-- 				"python",
+-- 				"regex",
+-- 				"ruby",
+-- 				"rust",
+-- 				"sql",
+-- 				"ssh_config",
+-- 				"swift",
+-- 				"terraform",
+-- 				"toml",
+-- 				"xml",
+-- 				"yaml",
+-- 				"zig",
+-- 			},
+-- 			sync_install = false,
+-- 			auto_install = true,
+-- 			highlight = {
+-- 				enable = true,
+-- 			},
+-- 			indent = {
+-- 				enable = true,
+-- 			},
+-- 		})
+-- 	end,
+-- }
+return {}
