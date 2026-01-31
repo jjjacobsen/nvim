@@ -88,6 +88,12 @@ return {
 		end, { desc = "Telescope live grep all" })
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+		vim.keymap.set("n", "<leader>ss", builtin.lsp_dynamic_workspace_symbols, { desc = "Symbols (workspace)" })
+		vim.keymap.set("n", "<leader>sd", builtin.lsp_document_symbols, { desc = "Symbols (document)" })
+		vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Go to definition" })
+		vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "Find references" })
+		vim.keymap.set("n", "gi", builtin.lsp_implementations, { desc = "Go to implementation" })
+		vim.keymap.set("n", "gD", builtin.lsp_type_definitions, { desc = "Go to type definition" })
 		vim.keymap.set("n", "<leader>`", "<cmd>b#<cr>", { desc = "Switch to alternate buffer" })
 	end,
 }

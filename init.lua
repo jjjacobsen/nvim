@@ -57,6 +57,8 @@ vim.keymap.set("n", "<leader>ts", function()
 	vim.cmd("verbose set tabstop? shiftwidth? softtabstop? expandtab? filetype?")
 end, { desc = "Show tab settings" })
 
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+
 vim.keymap.set("n", "<leader>d", function()
 	vim.cmd("Dashboard")
 end, { desc = "Show Dashboard" })
