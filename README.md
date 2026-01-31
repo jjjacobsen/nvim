@@ -18,22 +18,23 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 
 ## Plugins
 
-- Comment.nvim
-- auto-session
-- dashboard-nvim
-- flash.nvim
-- gitsigns.nvim
 - lazy.nvim
-- lazygit.nvim
-- lualine.nvim
+- Dependencies
+    - nvim-web-devicons
+    - plenary.nvim
+    - nvim-treesitter
+- Comment.nvim
 - oil.nvim
-- nvim-treesitter
-- nvim-web-devicons
-- plenary.nvim
-- telescope-fzf-native.nvim
-- telescope.nvim
 - tokyonight.nvim
-- git-blame.nvim
+- dashboard-nvim
+- auto-session
+- lualine.nvim
+- lazygit.nvim
+- gitsigns.nvim
+- telescope.nvim
+    - telescope-fzf-native.nvim
+- flash.nvim
+- lspconfig
 
 ## Installation
 
