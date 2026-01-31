@@ -80,15 +80,6 @@ vim.keymap.set("n", "<leader>h", function()
 end, { desc = "Clear highlights" })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "lua", "cpp", "hjson" },
-	callback = function()
-		vim.opt_local.tabstop = 4
-		vim.opt_local.shiftwidth = 4
-		vim.opt_local.softtabstop = 4
-	end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
 	pattern = {
 		"bash",
 		"c",
