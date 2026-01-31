@@ -22,6 +22,10 @@ return {
 	"nvimdev/dashboard-nvim",
 	event = "VimEnter",
 	config = function()
+		vim.keymap.set("n", "<leader>d", function()
+			vim.cmd("Dashboard")
+		end, { desc = "Show Dashboard" })
+
 		require("dashboard").setup({
 			config = {
 				header = header,

@@ -9,6 +9,10 @@ return {
 		skip_confirm_for_simple_edits = true,
 	},
 	config = function(_, opts)
+		vim.keymap.set("n", "<leader>o", function()
+			vim.cmd("Oil")
+		end, { desc = "Open Oil" })
+
 		local util = require("oil.util")
 		local original_hide_cursor = util.hide_cursor
 		util.hide_cursor = function()

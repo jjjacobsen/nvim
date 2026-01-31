@@ -59,21 +59,9 @@ end, { desc = "Show tab settings" })
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic" })
 
-vim.keymap.set("n", "<leader>d", function()
-	vim.cmd("Dashboard")
-end, { desc = "Show Dashboard" })
-
 vim.keymap.set("n", "<leader>bc", function()
 	vim.cmd("%bd")
 end, { desc = "Clear all buffers" })
-
-vim.keymap.set("n", "<leader>o", function()
-	vim.cmd("Oil")
-end, { desc = "Open Oil" })
-
-vim.keymap.set("n", "<leader>la", function()
-	vim.cmd("Lazy")
-end, { desc = "Open Lazy" })
 
 vim.keymap.set("n", "<leader>h", function()
 	vim.cmd("noh")
