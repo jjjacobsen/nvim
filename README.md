@@ -105,7 +105,4 @@ lvim
 ```bash
 # General
 :checkhealth
-
-# Tree Sitter
-:TSInstallInfo
 ```
