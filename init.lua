@@ -69,6 +69,10 @@ vim.keymap.set("n", "<leader>o", function()
 	vim.cmd("Oil")
 end, { desc = "Open Oil" })
 
+vim.keymap.set("n", "<leader>la", function()
+	vim.cmd("Lazy")
+end, { desc = "Open Lazy" })
+
 vim.keymap.set("n", "<leader>h", function()
 	vim.cmd("noh")
 end, { desc = "Clear highlights" })
