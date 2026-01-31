@@ -20,9 +20,9 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 
 - lazy.nvim
 - Dependencies
-    - nvim-web-devicons
-    - plenary.nvim
-    - nvim-treesitter
+  - nvim-web-devicons
+  - plenary.nvim
+  - nvim-treesitter
 - Comment.nvim
 - oil.nvim
 - tokyonight.nvim
@@ -32,13 +32,20 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 - lazygit.nvim
 - gitsigns.nvim
 - telescope.nvim
-    - telescope-fzf-native.nvim
+  - telescope-fzf-native.nvim
 - flash.nvim
 - lspconfig
 
 ## Installation
 
-1. Back up your current Neovim files (these commands copied from LazyVim's install)
+1. Install system dependencies with homebrew
+
+```bash
+brew install --cask font-hack-nerd-font
+brew install ripgrep fd tree-sitter tree-sitter-cli pyright
+```
+
+2. Back up your current Neovim files (these commands copied from LazyVim's install)
 
 ```bash
 # required
@@ -50,13 +57,19 @@ mv ~/.local/state/nvim{,.bak}
 mv ~/.cache/nvim{,.bak}
 ```
 
-2. Clone this repo
+(Optional) Completely remove all previous config. ‼️ Dangerous ‼️
+
+```bash
+rm -rf ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim ~/.cache/nvim
+```
+
+3. Clone this repo
 
 ```bash
 git clone https://github.com/jjjacobsen/nvim.git ~/.config/nvim
 ```
 
-3. (Optional) Remove the .git folder so you can version your fork later
+(Optional) Remove the .git folder so you can version your fork later
 
 ```bash
 rm -rf ~/.config/nvim/.git
@@ -98,6 +111,52 @@ chmod +x ~/.local/bin/lvim
 lvim
 ```
 
+## Notes
+
+- Install LSP servers via brew. This is the simplest way to understand and maintain them
+- For Python LSP (pyright), add this to `pyproject.toml` and point it at the project venv so the LSP sources the environment:
+
+  ```toml
+  [tool.pyright]
+  venvPath = "."
+  venv = ".venv"
+  ```
+
+- This mental model helps a lot to understand how neovim works:
+  Neovim has three layers
+  ```
+  ┌─────────────────────────────┐
+  │ Your config & plugins       │  ← init.lua, plugins, keymaps
+  │ (Lua you write)             │
+  ├─────────────────────────────┤
+  │ vim.* Lua API               │  ← what you're seeing in :checkhealth
+  │ (stable public interface)   │
+  ├─────────────────────────────┤
+  │ Neovim core (C / Rust / msg)│
+  │ buffers, windows, UI, etc   │
+  └─────────────────────────────┘
+  ```
+  You live in layer 1. You talk to layer 3 through layer 2 (vim.\*)
+- This is a good analogy to understand the difference between treesitter and LSP:
+
+#### Tree-sitter is a grammar checker
+
+It knows sentence structure:
+
+- Nouns
+- Verbs
+- Clauses
+
+#### LSP is a subject-matter expert
+
+It knows:
+
+- Whether the sentence is _true_
+- Whether it makes sense in context
+- Whether it contradicts other documents
+
+Grammar ≠ meaning.
+
 ## Maintenance
 
 - Check the health of the installation with
@@ -106,3 +165,7 @@ lvim
 # General
 :checkhealth
 ```
+
+- Update packages every so often with:
+  - Treesitter parsers with `:TSUpdate`
+  - Lazy (open with `<leader>la` and then press `U`)
