@@ -42,7 +42,7 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 
 ```bash
 brew install --cask font-hack-nerd-font
-brew install ripgrep fd tree-sitter tree-sitter-cli pyright
+brew install ripgrep fd tree-sitter tree-sitter-cli pyright jdtls
 ```
 
 2. Back up your current Neovim files (these commands copied from LazyVim's install)
