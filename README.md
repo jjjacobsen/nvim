@@ -35,6 +35,7 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
   - telescope-fzf-native.nvim
 - flash.nvim
 - lspconfig
+- nvim-surround
 
 ## Installation
 
