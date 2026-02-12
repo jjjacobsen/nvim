@@ -7,5 +7,6 @@ return {
 			filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 		})
 		vim.lsp.enable("ts_ls")
+		vim.lsp.enable("dartls")
 	end,
 }
