@@ -8,5 +8,6 @@ return {
 		})
 		vim.lsp.enable("ts_ls")
 		vim.lsp.enable("dartls")
+		vim.lsp.enable("rust_analyzer")
 	end,
 }
