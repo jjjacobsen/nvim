@@ -46,7 +46,7 @@ brew install --cask font-hack-nerd-font
 brew install ripgrep fd tree-sitter tree-sitter-cli pyright jdtls typescript-language-server dart-sdk rust-analyzer
 ```
 
-2. Back up your current Neovim files (these commands copied from LazyVim's install)
+2. Back up your current Neovim files
 
 ```bash
 # required
@@ -68,12 +68,6 @@ rm -rf ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim ~/.cache/nvim
 
 ```bash
 git clone https://github.com/jjjacobsen/nvim.git ~/.config/nvim
-```
-
-(Optional) Remove the .git folder so you can version your fork later
-
-```bash
-rm -rf ~/.config/nvim/.git
 ```
 
 4. Launch Neovim
