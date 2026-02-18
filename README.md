@@ -37,6 +37,7 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 - lspconfig
 - nvim-surround
 - peek.nvim
+- indent-blankline.nvim
 
 ## Installation
 
