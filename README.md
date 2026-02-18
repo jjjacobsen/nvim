@@ -44,7 +44,7 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 
 ```bash
 brew install --cask font-hack-nerd-font
-brew install ripgrep fd tree-sitter tree-sitter-cli pyright jdtls typescript-language-server dart-sdk rust-analyzer deno
+brew install ripgrep fd tree-sitter tree-sitter-cli pyright jdtls typescript-language-server dart-sdk rust-analyzer deno lazygit
 ```
 
 2. Back up your current Neovim files
