@@ -1,6 +1,6 @@
 # jjjacobsen.nvim
 
-Minimal, effective, and stylish Neovim config for people who want their editor to stay out of the way.
+Minimal, effective, and stylish Neovim config for people who want their editor to stay out of the way
 
 <p align="center">
   <img src="screenshots/Screenshot%202025-11-08%20at%2006.42.24.png" alt="Dashboard overview" width="48%" />
@@ -14,7 +14,7 @@ Minimal, effective, and stylish Neovim config for people who want their editor t
 
 ## Philosophy
 
-Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, there are those who cry out for a minimal alternative. This setup has no file tabs, no file trees, no autocomplete, no debuggers, and no AI. This setup does have fast and fluid text editing capabilities, powerful file finding capacity (telescope), and smooth git integration (lazygit) with a stylistic touch. Stop letting your tools think for you, and instead equip a double-edged sword. A sword that will amplify _your_ skills.
+Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, there are those who cry out for a minimal alternative. This setup has no file tabs, no file trees, no autocomplete, no debuggers, and no AI. This setup does have fast and fluid text editing capabilities, powerful file finding capacity (telescope), and smooth git integration (lazygit) with a stylistic touch. Stop letting your tools think for you, and instead equip a double-edged sword. A sword that will amplify _your_ skills
 
 ## Plugins
 
