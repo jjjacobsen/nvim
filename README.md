@@ -2,15 +2,13 @@
 
 Minimal, effective, and stylish Neovim config for people who want their editor to stay out of the way
 
-<p align="center">
-  <img src="screenshots/Screenshot%202025-11-08%20at%2006.42.24.png" alt="Dashboard overview" width="48%" />
-  <img src="screenshots/Screenshot%202025-11-08%20at%2006.46.42.png" alt="Editing buffer" width="48%" />
-</p>
+| Dashboard | Telescope |
+| --- | --- |
+| ![Dashboard](screenshots/Screenshot%202025-11-08%20at%2006.42.24.png) | ![Telescope](screenshots/Screenshot%202025-11-08%20at%2006.46.42.png) |
 
-<p align="center">
-  <img src="screenshots/Screenshot%202025-11-08%20at%2006.43.46.png" alt="Telescope picker" width="48%" />
-  <img src="screenshots/Screenshot%202025-11-08%20at%2006.48.04.png" alt="ToggleTerm" width="48%" />
-</p>
+| Normal Buffer | Lazygit |
+| --- | --- |
+| ![Normal Buffer](screenshots/Screenshot%202025-11-08%20at%2006.43.46.png) | ![Lazygit](screenshots/Screenshot%202025-11-08%20at%2006.48.04.png) |
 
 ## Philosophy
 
