@@ -2,12 +2,12 @@
 
 Minimal, effective, and stylish Neovim config for people who want their editor to stay out of the way
 
-| Dashboard | Telescope |
-| --- | --- |
+| Dashboard                                                             | Telescope                                                             |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- |
 | ![Dashboard](screenshots/Screenshot%202025-11-08%20at%2006.42.24.png) | ![Telescope](screenshots/Screenshot%202025-11-08%20at%2006.46.42.png) |
 
-| Normal Buffer | Lazygit |
-| --- | --- |
+| Normal Buffer                                                             | Lazygit                                                             |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | ![Normal Buffer](screenshots/Screenshot%202025-11-08%20at%2006.43.46.png) | ![Lazygit](screenshots/Screenshot%202025-11-08%20at%2006.48.04.png) |
 
 ## Philosophy
@@ -43,7 +43,19 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 
 ```bash
 brew install --cask font-hack-nerd-font
-brew install ripgrep fd tree-sitter tree-sitter-cli pyright jdtls typescript-language-server dart-sdk rust-analyzer deno lazygit postgres-language-server
+brew install \
+  ripgrep \
+  fd \
+  lazygit \
+  tree-sitter \
+  tree-sitter-cli \
+  pyright \
+  jdtls \
+  typescript-language-server \
+  dart-sdk \
+  rust-analyzer \
+  deno \
+  postgres-language-server
 ```
 
 2. Back up your current Neovim files
@@ -74,6 +86,13 @@ git clone https://github.com/jjjacobsen/nvim.git ~/.config/nvim
 
 ```bash
 nvim
+```
+
+5. (Optional) Dev Dependencies
+
+```bash
+brew install pre-commit stylua
+pre-commit install
 ```
 
 ### Secondary LazyVim Install
@@ -116,6 +135,8 @@ lvim
   venvPath = "."
   venv = ".venv"
   ```
+
+- The postgres LSP requires a `postgres-language-server.jsonc` file in the workspace in order to load
 
 - This mental model helps a lot to understand how neovim works:
   Neovim has three layers
