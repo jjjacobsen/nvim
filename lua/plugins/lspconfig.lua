@@ -10,5 +10,6 @@ return {
 		vim.lsp.enable("dartls")
 		vim.lsp.enable("rust_analyzer")
 		vim.lsp.enable("postgres_lsp")
+		vim.lsp.enable("bashls")
 	end,
 }

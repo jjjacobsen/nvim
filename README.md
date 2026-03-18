@@ -55,7 +55,8 @@ brew install \
   dart-sdk \
   rust-analyzer \
   deno \
-  postgres-language-server
+  postgres-language-server \
+  bash-language-server
 ```
 
 2. Back up your current Neovim files
