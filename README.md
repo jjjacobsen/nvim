@@ -137,6 +137,12 @@ lvim
   ```
 
 - The postgres LSP requires a `postgres-language-server.jsonc` file in the workspace in order to load
+- Replace a text pattern across the repo with:
+
+  ```bash
+  :grep pattern
+  :cdo %s/pattern/replacement/g | update
+  ```
 
 - This mental model helps a lot to understand how neovim works:
   Neovim has three layers
