@@ -49,6 +49,8 @@ vim.keymap.set("n", "<leader>cf", function()
 	print("Copied filename: " .. vim.fn.expand("%:t"))
 end, { desc = "Copy filename to clipboard" })
 
+vim.keymap.set("n", "<leader>cc", "<cmd>%y+<cr>", { desc = "Copy file contents to clipboard" })
+
 vim.keymap.set("n", "<leader>mk", function()
 	vim.cmd("!mkdir -p %:p:h")
 end, { desc = "Create parent directories for file" })
