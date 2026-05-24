@@ -15,5 +15,6 @@ return {
 			filetypes = { "yaml" },
 		})
 		vim.lsp.enable("yamlls")
+		vim.lsp.enable("denols")
 	end,
 }
