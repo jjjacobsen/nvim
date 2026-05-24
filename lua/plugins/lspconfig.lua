@@ -11,5 +11,9 @@ return {
 		vim.lsp.enable("rust_analyzer")
 		vim.lsp.enable("postgres_lsp")
 		vim.lsp.enable("bashls")
+		vim.lsp.config("yamlls", {
+			filetypes = { "yaml" },
+		})
+		vim.lsp.enable("yamlls")
 	end,
 }

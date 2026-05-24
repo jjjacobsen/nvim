@@ -56,7 +56,8 @@ brew install \
   rust-analyzer \
   deno \
   postgres-language-server \
-  bash-language-server
+  bash-language-server \
+  yaml-language-server
 ```
 
 2. Back up your current Neovim files
