@@ -108,3 +108,11 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.treesitter.start()
 	end,
 })
+
+-- nvim's pkl ftplugin sets foldmethod=syntax, which folds every {} block
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "pkl",
+	callback = function()
+		vim.wo.foldmethod = "manual"
+	end,
+})
