@@ -58,7 +58,8 @@ brew install \
   postgres-language-server \
   bash-language-server \
   yaml-language-server \
-  marksman
+  marksman \
+  taplo
 ```
 
 2. Back up your current Neovim files

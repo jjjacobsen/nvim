@@ -20,5 +20,6 @@ return {
 			filetypes = { "markdown" },
 		})
 		vim.lsp.enable("marksman")
+		vim.lsp.enable("taplo")
 	end,
 }
