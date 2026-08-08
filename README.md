@@ -139,12 +139,16 @@ lvim
   ```
 
 - The postgres LSP requires a `postgres-language-server.jsonc` file in the workspace in order to load
-- Replace a text pattern across the repo with:
+- Replace a text pattern across the repo with the live grep + quickfix flow:
 
-  ```bash
-  :grep pattern
-  :cdo %s/pattern/replacement/g | update
-  ```
+  1. `<leader>fg` to live grep for the pattern
+  2. `<C-q>` in the picker to send the matches to the quickfix list
+  3. `:copen` to review the matches first if you want
+  4. `:cfdo %s/pattern/replacement/ge | update`
+
+  `cfdo` runs once per file in the quickfix list, `cdo` runs once per match line, and `argdo` is the same for the arglist (populate with `:args **/*.ext`). `g` replaces every occurrence per line, `e` skips files with no match, `update` writes changed buffers. Undo per file with `u`
+
+  The same flow works when the quickfix list comes from `:grep` or `:vimgrep` instead of Telescope
 
 - This mental model helps a lot to understand how neovim works:
   Neovim has three layers
