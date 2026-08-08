@@ -61,6 +61,7 @@ vim.keymap.set("n", "<leader>ts", function()
 end, { desc = "Show tab settings" })
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP rename" })
 
 vim.keymap.set("n", "<leader>bc", function()
 	vim.cmd("%bd")
