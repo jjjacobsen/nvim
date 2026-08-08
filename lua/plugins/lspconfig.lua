@@ -16,5 +16,9 @@ return {
 		})
 		vim.lsp.enable("yamlls")
 		vim.lsp.enable("denols")
+		vim.lsp.config("marksman", {
+			filetypes = { "markdown" },
+		})
+		vim.lsp.enable("marksman")
 	end,
 }
