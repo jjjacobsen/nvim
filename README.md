@@ -200,3 +200,7 @@ Grammar ≠ meaning.
 - Update packages every so often with:
   - Treesitter parsers with `:TSUpdate`
   - Lazy (open with `<leader>la` and then press `U`)
+
+## Goal
+
+- Zero dependence on third-party lazy.nvim extensions; everything here is built in house, piece by piece
