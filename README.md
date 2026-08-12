@@ -59,7 +59,8 @@ brew install \
   bash-language-server \
   yaml-language-server \
   marksman \
-  taplo
+  taplo \
+  zls
 ```
 
 2. Back up your current Neovim files

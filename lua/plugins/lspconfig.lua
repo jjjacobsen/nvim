@@ -21,5 +21,6 @@ return {
 		})
 		vim.lsp.enable("marksman")
 		vim.lsp.enable("taplo")
+		vim.lsp.enable("zls")
 	end,
 }
