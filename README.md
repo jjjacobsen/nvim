@@ -97,8 +97,8 @@ nvim
 5. (Optional) Dev Dependencies
 
 ```bash
-brew install pre-commit stylua
-pre-commit install
+brew install stylua
+mise use hk
 ```
 
 ### Secondary LazyVim Install
