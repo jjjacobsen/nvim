@@ -16,7 +16,9 @@ local linters = new Mapping<String, Step> {
   ["taplo"] = Builtins.taplo
   ["check-json"] = new Step {
     glob = "**/*.json"
-    check = "jq empty {{files}}"  // validate syntax only, no reformatting
+    // syntax only, no reformatting. Loop per file: json.tool with 2 files treats the
+    // 2nd as an output file and overwrites it
+    check = "for f in {{files}}; do python3 -m json.tool \"$f\" >/dev/null || exit 1; done"
   }
   ["typos"] = Builtins.typos
   ["gitleaks"] = Builtins.gitleaks
