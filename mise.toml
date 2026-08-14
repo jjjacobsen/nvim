@@ -1,2 +1,5 @@
 [tools]
 hk = "latest"
+
+[env]
+HK_MISE = 1
