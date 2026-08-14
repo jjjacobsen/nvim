@@ -1,4 +1,5 @@
 amends "package://github.com/jdx/hk/releases/download/v1.54.0/hk@1.54.0#/Config.pkl"
+
 import "package://github.com/jdx/hk/releases/download/v1.54.0/hk@1.54.0#/Builtins.pkl"
 
 local linters = new Mapping<String, Step> {
@@ -13,6 +14,7 @@ local linters = new Mapping<String, Step> {
   ["mixed-line-ending"] = Builtins.mixed_line_ending
   ["newlines"] = Builtins.newlines
   ["trailing-whitespace"] = Builtins.trailing_whitespace
+  ["fix-smart-quotes"] = Builtins.fix_smart_quotes
   ["taplo"] = Builtins.taplo
   // lazy-lock.json is generated compact by lazy.nvim, jq would expand it every run
   ["jq"] = (Builtins.jq) {
@@ -28,6 +30,10 @@ local linters = new Mapping<String, Step> {
 
   // lua
   ["stylua"] = Builtins.stylua
+
+  // pkl
+  ["pkl"] = Builtins.pkl
+  ["pkl-format"] = Builtins.pkl_format
 }
 
 hooks {
