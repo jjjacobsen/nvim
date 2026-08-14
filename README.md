@@ -51,7 +51,6 @@ brew install \
   tree-sitter-cli \
   pyright \
   jdtls \
-  typescript-language-server \
   dart-sdk \
   rust-analyzer \
   deno \
@@ -61,6 +60,8 @@ brew install \
   marksman \
   taplo
 mise use -g zls
+mise use -g npm:typescript@6.0.3
+mise use -g npm:typescript-language-server@5.3.0
 ```
 
 2. Back up your current Neovim files
@@ -132,7 +133,7 @@ lvim
 
 ## Notes
 
-- Install LSP servers via brew. This is the simplest way to understand and maintain them
+- Install most LSP servers via brew, JS/TS tooling via mise. This is the simplest way to understand and maintain them
 - For Python LSP (pyright), add this to `pyproject.toml` and point it at the project venv so the LSP sources the environment:
 
   ```toml
