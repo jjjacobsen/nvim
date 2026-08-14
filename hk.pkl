@@ -14,11 +14,9 @@ local linters = new Mapping<String, Step> {
   ["newlines"] = Builtins.newlines
   ["trailing-whitespace"] = Builtins.trailing_whitespace
   ["taplo"] = Builtins.taplo
-  ["check-json"] = new Step {
-    glob = "**/*.json"
-    // syntax only, no reformatting. Loop per file: json.tool with 2 files treats the
-    // 2nd as an output file and overwrites it
-    check = "for f in {{files}}; do python3 -m json.tool \"$f\" >/dev/null || exit 1; done"
+  // lazy-lock.json is generated compact by lazy.nvim, jq would expand it every run
+  ["jq"] = (Builtins.jq) {
+    exclude = List("lazy-lock.json")
   }
   ["typos"] = Builtins.typos
   ["gitleaks"] = Builtins.gitleaks
