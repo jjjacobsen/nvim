@@ -31,6 +31,8 @@ require("config.lazy")
 
 vim.keymap.set("n", "<C-k>", "<C-y>k", { desc = "Scroll up with cursor" })
 vim.keymap.set("n", "<C-j>", "<C-e>j", { desc = "Scroll down with cursor" })
+vim.keymap.set("n", "<C-D>", "<C-D>zz", { desc = "Scroll half page down, keep cursor centered" })
+vim.keymap.set("n", "<C-U>", "<C-U>zz", { desc = "Scroll half page up, keep cursor centered" })
 vim.keymap.set("n", "Y", "_y$", { desc = "Yank line contents" })
 vim.keymap.set("n", "U", "y$", { desc = "Yank from cursor to end of line" })
 vim.keymap.set("x", "P", '"_dP', { desc = "Paste without replacing clipboard" })
