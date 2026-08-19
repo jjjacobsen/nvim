@@ -29,6 +29,7 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 - lualine.nvim
 - lazygit.nvim
 - gitsigns.nvim
+- fff
 - telescope.nvim
   - telescope-fzf-native.nvim
 - flash.nvim
