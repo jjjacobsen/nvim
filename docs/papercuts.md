@@ -12,3 +12,5 @@
 - `fff` (dmtrKovalenko/fff) cannot be exercised headlessly: `nvim --headless +"lua require('fff').file_search(...)"` returns "timeout waiting for index scan" even though the filesystem walk completes in <1ms per the Rust log
 - The picker's initial-scan readiness signal is only delivered while nvim's main loop runs; a headless `-c`/defer call blocks before it arrives, and tracing output on abrupt exit is unreliable
 - Unblocked by verifying in a real terminal via tmux (`nvim` in a pane, `<space>ff` / `<space>fg` drove the picker end-to-end). The plugin works fine interactively
+- `:TSUpdate <lang>` run headlessly as `nvim --headless "+TSUpdate swift" +qa` exits before the async compile job finishes: the parser is never rebuilt and the command exits 0 with no error, leaving a stale parser silently installed (parser-info/*.revision unchanged)
+- Unblocked by adding `"+sleep 15"` (or `+sleep 30` for large parsers) before `+qa` and then verifying `~/.local/share/nvim/site/parser-info/<lang>.revision` matches the pinned revision in nvim-treesitter's lua/nvim-treesitter/parsers.lua
