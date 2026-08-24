@@ -63,6 +63,7 @@ brew install \
 mise use -g zls
 mise use -g npm:typescript@6.0.3
 mise use -g npm:typescript-language-server@5.3.0
+mise use -g gem:ruby-lsp
 ```
 
 2. Back up your current Neovim files
