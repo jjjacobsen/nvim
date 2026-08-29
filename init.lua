@@ -1,9 +1,13 @@
 vim.opt.guicursor = ""
 vim.opt.clipboard = "unnamedplus"
+vim.opt.cmdheight = 0
 vim.opt.ignorecase = true
 vim.opt.smartcase = false
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.ruler = false
+vim.opt.showcmd = false
+vim.opt.showmode = false
 vim.opt.signcolumn = "number"
 vim.opt.termguicolors = true
 vim.opt.undofile = true
