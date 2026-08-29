@@ -109,36 +109,6 @@ brew install stylua
 mise use hk
 ```
 
-### Secondary LazyVim Install
-
-I like to have LazyVim installed on the side under `lvim` that I check every so often to see if I want to add some plugins. This is how to install it without affecting the main nvim config
-
-1. Clone LazyVim to separate directory
-
-```bash
-git clone https://github.com/LazyVim/starter ~/.config/lvim
-```
-
-2. Create file at `~/.local/bin/lvim` with the following content
-
-```bash
-#!/usr/bin/env bash
-export NVIM_APPNAME=lvim
-exec nvim "$@"
-```
-
-3. Make executable
-
-```bash
-chmod +x ~/.local/bin/lvim
-```
-
-4. Launch LazyVim
-
-```bash
-lvim
-```
-
 ## Notes
 
 - Install most LSP servers via brew, JS/TS tooling via mise. This is the simplest way to understand and maintain them
@@ -209,7 +179,3 @@ Grammar ≠ meaning.
 - Update packages every so often with:
   - Treesitter parsers with `:TSUpdate`
   - Lazy (open with `<leader>la` and then press `U`)
-
-## Goal
-
-- Zero dependence on third-party lazy.nvim extensions; everything here is built in house, piece by piece
