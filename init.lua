@@ -4,6 +4,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = false
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.signcolumn = "number"
 vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.sessionoptions = {
