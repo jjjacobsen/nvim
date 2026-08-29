@@ -24,8 +24,6 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 - dashboard-nvim
   - nvim-web-devicons (shared)
 - auto-session
-- lualine.nvim
-  - nvim-web-devicons (shared)
 - lazygit.nvim
   - plenary.nvim (shared)
 - gitsigns.nvim

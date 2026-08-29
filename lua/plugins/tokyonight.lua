@@ -16,6 +16,8 @@ return {
 			hl.LineNrAbove = { fg = c.fg }
 			hl.LineNrBelow = { fg = c.fg }
 			hl.CursorLineNr = { fg = c.blue, bold = true }
+			hl.StatusLine.bg = c.none
+			hl.StatusLineNC.bg = c.none
 		end,
 	},
 	config = function(_, opts)
