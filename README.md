@@ -18,7 +18,6 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 
 - lazy.nvim
 - nvim-treesitter
-- Comment.nvim
 - oil.nvim
   - nvim-web-devicons (shared)
 - tokyonight.nvim
