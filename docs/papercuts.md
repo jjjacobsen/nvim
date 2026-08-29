@@ -14,3 +14,9 @@
 - Unblocked by verifying in a real terminal via tmux (`nvim` in a pane, `<space>ff` / `<space>fg` drove the picker end-to-end). The plugin works fine interactively
 - `:TSUpdate <lang>` run headlessly as `nvim --headless "+TSUpdate swift" +qa` exits before the async compile job finishes: the parser is never rebuilt and the command exits 0 with no error, leaving a stale parser silently installed (parser-info/*.revision unchanged)
 - Unblocked by adding `"+sleep 15"` (or `+sleep 30` for large parsers) before `+qa` and then verifying `~/.local/share/nvim/site/parser-info/<lang>.revision` matches the pinned revision in nvim-treesitter's lua/nvim-treesitter/parsers.lua
+
+## 2026-08-29
+
+- Flash search labels became stale after `/` incremental search scrolled the window on Neovim 0.12, so a displayed label could jump to the wrong match
+- This is upstream flash.nvim issue #480. Updating to the latest main commit does not include a fix
+- Open pull request #488 forces a redraw and improves label rendering, but the same workaround did not make off-screen label jumps reliable in this config, so the workaround was removed while waiting for an upstream fix

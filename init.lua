@@ -38,6 +38,14 @@ require("config.lazy")
 
 vim.keymap.set("n", "<C-k>", "<C-y>k", { desc = "Scroll up with cursor" })
 vim.keymap.set("n", "<C-j>", "<C-e>j", { desc = "Scroll down with cursor" })
+vim.keymap.set("c", "<C-k>", function()
+	local cmdtype = vim.fn.getcmdtype()
+	return (cmdtype == "/" or cmdtype == "?") and "<C-t>" or "<C-k>"
+end, { desc = "Previous search result", expr = true })
+vim.keymap.set("c", "<C-j>", function()
+	local cmdtype = vim.fn.getcmdtype()
+	return (cmdtype == "/" or cmdtype == "?") and "<C-g>" or "<C-j>"
+end, { desc = "Next search result", expr = true })
 vim.keymap.set("n", "<C-D>", "<C-D>zz", { desc = "Scroll half page down, keep cursor centered" })
 vim.keymap.set("n", "<C-U>", "<C-U>zz", { desc = "Scroll half page up, keep cursor centered" })
 vim.keymap.set("n", "Y", "_y$", { desc = "Yank line contents" })
