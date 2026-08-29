@@ -6,6 +6,13 @@ return {
 	end,
 	lazy = false, -- the plugin lazy-initialises itself
 	opts = {
+		layout = {
+			height = 0.8,
+			width = 0.8,
+			prompt_position = "bottom",
+			preview_position = "right",
+			preview_size = 0.5,
+		},
 		keymaps = {
 			move_up = { "<Up>", "<C-p>", "<C-k>" },
 			move_down = { "<Down>", "<C-n>", "<C-j>" },
