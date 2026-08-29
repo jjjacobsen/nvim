@@ -48,7 +48,6 @@ brew install \
   ripgrep \
   fd \
   lazygit \
-  tree-sitter \
   tree-sitter-cli \
   pyright \
   jdtls \
@@ -65,6 +64,14 @@ mise use -g npm:typescript@6.0.3
 mise use -g npm:typescript-language-server@5.3.0
 mise use -g gem:ruby-lsp
 ```
+
+On Arch Linux, install the Tree-sitter CLI and parser build tools with:
+
+```bash
+sudo pacman -S tree-sitter-cli base-devel
+```
+
+Neovim includes Tree-sitter integration and a small set of parsers, but `nvim-treesitter` still needs the CLI to install the additional parsers in this config. See [Tree-sitter dependencies](docs/treesitter.md) for details
 
 2. Back up your current Neovim files
 
