@@ -20,7 +20,9 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 - nvim-treesitter
 - oil.nvim
   - nvim-web-devicons (shared)
-- tokyonight.nvim
+- Omarchy theme synchronization
+  - Uses the active Omarchy theme and follows theme changes on Omarchy
+  - Uses tokyonight.nvim as the fallback on other systems
 - dashboard-nvim
   - nvim-web-devicons (shared)
 - auto-session

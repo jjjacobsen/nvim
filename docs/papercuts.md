@@ -20,3 +20,10 @@
 - Flash search labels became stale after `/` incremental search scrolled the window on Neovim 0.12, so a displayed label could jump to the wrong match
 - This is upstream flash.nvim issue #480. Updating to the latest main commit does not include a fix
 - Open pull request #488 forces a redraw and improves label rendering, but the same workaround did not make off-screen label jumps reliable in this config, so the workaround was removed while waiting for an upstream fix
+
+## 2026-09-02
+
+- A macOS fallback check set `HOME` and `XDG_DATA_HOME` in one command, so the shell expanded `XDG_DATA_HOME` from the original home and Lazy used the active plugin directory
+- Unblocked by checking the printed fallback colorscheme directly. Set the temporary home in a separate command before deriving XDG paths in future isolated checks
+- `mise x -- hk check --all` failed outside the repo because mise did not load the repo tools. Running it from the repo loaded hk, but hk then failed on a sparse tracked path and missing `stylua`
+- `:Lazy sync` updated existing plugins while recording the new theme plugins. Restored the existing lock entries and plugin checkouts, and kept only the new theme lock entries
