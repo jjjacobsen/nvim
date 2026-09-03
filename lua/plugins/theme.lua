@@ -31,6 +31,7 @@ local fallback = {
 local omarchy_current = vim.fn.expand("~/.local/state/omarchy/current")
 local omarchy_theme = omarchy_current .. "/theme/neovim.lua"
 local omarchy_theme_name = omarchy_current .. "/theme.name"
+local transparency = vim.fn.stdpath("config") .. "/plugin/after/transparency.lua"
 
 if vim.fn.filereadable(omarchy_theme) == 0 then
 	return { fallback.plugin }
@@ -106,6 +107,7 @@ specs[#specs + 1] = {
 			end
 
 			vim.cmd.colorscheme(colorscheme)
+			vim.cmd.source(transparency)
 		end
 
 		apply_theme()
