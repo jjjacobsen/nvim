@@ -41,40 +41,52 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 
 ## Installation
 
-1. Install system dependencies with homebrew
+### 1. Install system dependencies
+
+Omarchy already includes Neovim and the required command-line tools. To install or repair them:
+
+```bash
+omarchy pkg add base-devel fd lazygit ripgrep tree-sitter-cli
+```
+
+On macOS:
 
 ```bash
 brew install --cask font-hack-nerd-font
-brew install \
-  ripgrep \
-  fd \
-  lazygit \
-  tree-sitter-cli \
-  pyright \
-  jdtls \
-  dart-sdk \
-  rust-analyzer \
-  deno \
-  postgres-language-server \
-  bash-language-server \
-  yaml-language-server \
-  marksman \
-  taplo
-mise use -g zls
-mise use -g npm:typescript@6.0.3
-mise use -g npm:typescript-language-server@5.3.0
-mise use -g gem:ruby-lsp
+brew install neovim fd lazygit ripgrep tree-sitter-cli
 ```
 
-On Arch Linux, install the Tree-sitter CLI and parser build tools with:
+Neovim includes Tree-sitter integration and a small set of parsers, but `nvim-treesitter` still needs the CLI and a C compiler to install the additional parsers in this config. See [Tree-sitter dependencies](docs/treesitter.md) for details
+
+### 2. Install global language servers with mise
+
+These editor tools are shared across projects:
 
 ```bash
-sudo pacman -S tree-sitter-cli base-devel
+mise use -g \
+  npm:pyright@latest \
+  npm:bash-language-server@latest \
+  npm:yaml-language-server@latest \
+  npm:@postgres-language-server/cli@latest \
+  npm:typescript@6.0.3 \
+  npm:typescript-language-server@5.3.0 \
+  marksman@latest \
+  taplo@latest
 ```
 
-Neovim includes Tree-sitter integration and a small set of parsers, but `nvim-treesitter` still needs the CLI to install the additional parsers in this config. See [Tree-sitter dependencies](docs/treesitter.md) for details
+JDTLS does not have a first-party mise package. Install it only when Java support is needed:
 
-2. Back up your current Neovim files
+```bash
+# Omarchy
+omarchy pkg aur add jdtls
+
+# macOS
+brew install jdtls
+```
+
+Keep language toolchains and their tightly coupled servers in each project. This includes Dart, Rust and `rust-analyzer`, Deno, Zig and ZLS, Ruby and `ruby-lsp`, Java, project TypeScript, and Python virtual environments
+
+### 3. Back up the current Neovim files
 
 ```bash
 # required
@@ -86,34 +98,36 @@ mv ~/.local/state/nvim{,.bak}
 mv ~/.cache/nvim{,.bak}
 ```
 
-(Optional) Completely remove all previous config. ‼️ Dangerous ‼️
+To start completely fresh instead:
 
 ```bash
 rm -rf ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim ~/.cache/nvim
 ```
 
-3. Clone this repo
+### 4. Clone this repo
 
 ```bash
-git clone https://github.com/jjjacobsen/nvim.git ~/.config/nvim
+git clone git@github.com:jjjacobsen/nvim.git ~/.config/nvim
 ```
 
-4. Launch Neovim
+### 5. Launch Neovim
 
 ```bash
 nvim
 ```
 
-5. (Optional) Dev Dependencies
+lazy.nvim installs the plugins on the first launch. On Omarchy, Neovim follows the active Omarchy theme and keeps it transparent. On other systems, it uses the transparent Tokyo Night fallback. SSH, tmux, and Herdr sessions use OSC 52 clipboard forwarding
+
+### 6. Optional development dependencies
 
 ```bash
-brew install stylua
-mise use hk
+mise use -g stylua@latest
+mise install
 ```
 
 ## Notes
 
-- Install most LSP servers via brew, JS/TS tooling via mise. This is the simplest way to understand and maintain them
+- Install shared language servers globally with mise, but keep language runtimes, compilers, and version-sensitive servers in each project
 - For Python LSP (pyright), add this to `pyproject.toml` and point it at the project venv so the LSP sources the environment:
 
   ```toml
@@ -122,7 +136,7 @@ mise use hk
   venv = ".venv"
   ```
 
-- The postgres LSP requires a `postgres-language-server.jsonc` file in the workspace in order to load
+- Add `postgres-language-server.jsonc` to a workspace when the Postgres LSP needs project-specific settings
 - Replace a text pattern across the repo with the live grep + quickfix flow:
 
   1. `<leader>fg` to live grep for the pattern

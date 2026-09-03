@@ -27,3 +27,4 @@
 - Unblocked by checking the printed fallback colorscheme directly. Set the temporary home in a separate command before deriving XDG paths in future isolated checks
 - `mise x -- hk check --all` failed outside the repo because mise did not load the repo tools. Running it from the repo loaded hk, but hk then failed on a sparse tracked path and missing `stylua`
 - `:Lazy sync` updated existing plugins while recording the new theme plugins. Restored the existing lock entries and plugin checkouts, and kept only the new theme lock entries
+- Mise's `ubi:eclipse-jdtls/eclipse.jdt.ls` backend found JDTLS 1.60.0 but tried a nonexistent GitHub release URL. JDTLS publishes its archive through Eclipse instead, and mise has no first-party registry entry, so it was left for an AUR or project-specific installation
