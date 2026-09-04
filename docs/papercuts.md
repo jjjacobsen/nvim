@@ -40,3 +40,7 @@
 
 - A headless Neovim check falsely showed that auto-session still did not restore after fixing plugin priority because auto-session intentionally skips restoration without an attached UI
 - Unblocked by starting Neovim in a detached tmux session with `--listen`, then checking `v:this_session`, `getcwd()`, and the active buffer through `--remote-expr`
+- `mise x -- hk check --all` used the global environment and could not resolve the project-pinned `hk` because the command started outside this repository
+- Unblocked by changing to the repository before running the check
+- `omarchy-launch-tui` remained attached while its Ghostty window was open, so a combined launch-and-inspect command timed out before it reached the assertions
+- Unblocked by inspecting the Neovim server and Hyprland client in a separate command. Background the launcher for future automated checks

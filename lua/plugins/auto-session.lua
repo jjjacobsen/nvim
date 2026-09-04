@@ -1,3 +1,10 @@
+local function open_start_file()
+	local file = vim.env.NVIM_START_FILE
+	if file then
+		vim.cmd.edit(vim.fn.fnameescape(file))
+	end
+end
+
 return {
 	"rmagatti/auto-session",
 	lazy = false,
@@ -9,6 +16,7 @@ return {
 	opts = {
 		suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
 		post_restore_cmds = {
+			open_start_file,
 			function()
 				local buf = vim.api.nvim_get_current_buf()
 				local filetype = vim.bo[buf].filetype
@@ -28,6 +36,7 @@ return {
 				end
 			end,
 		},
+		no_restore_cmds = { open_start_file },
 		-- log_level = 'debug',
 	},
 }
