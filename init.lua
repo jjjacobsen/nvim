@@ -58,6 +58,16 @@ vim.keymap.set("n", "Y", "_y$", { desc = "Yank line contents" })
 vim.keymap.set("n", "U", "y$", { desc = "Yank from cursor to end of line" })
 vim.keymap.set("x", "P", '"_dP', { desc = "Paste without replacing clipboard" })
 
+vim.keymap.set("n", "<leader>n", function()
+	local note = vim.fn.expand("~/Documents/obsidian/daily/" .. os.date("%F") .. ".md")
+	vim.cmd.edit(vim.fn.fnameescape(note))
+end, { desc = "Open today's daily note" })
+
+vim.keymap.set("n", "<leader>.", function()
+	local scratch = vim.fn.expand("~/Documents/obsidian/scratch.md")
+	vim.cmd.edit(vim.fn.fnameescape(scratch))
+end, { desc = "Open Obsidian scratch note" })
+
 vim.keymap.set("n", "<leader>cp", function()
 	vim.fn.setreg("+", vim.fn.expand("%:p"))
 	print("Copied path: " .. vim.fn.expand("%:p"))
