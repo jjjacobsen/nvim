@@ -21,6 +21,8 @@ local groups = {
 	"LineNr",
 	"CursorLineNr",
 	"NormalNC",
+	"StatusLine",
+	"StatusLineNC",
 	"WhichKeyFloat",
 	"TelescopeBorder",
 	"TelescopeNormal",
