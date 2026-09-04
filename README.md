@@ -58,12 +58,13 @@ brew install neovim fd lazygit ripgrep tree-sitter-cli
 
 Neovim includes Tree-sitter integration and a small set of parsers, but `nvim-treesitter` still needs the CLI and a C compiler to install the additional parsers in this config. See [Tree-sitter dependencies](docs/treesitter.md) for details
 
-### 2. Install global language servers with mise
+### 2. Install global editor tools with mise
 
 These editor tools are shared across projects:
 
 ```bash
 mise use -g \
+  deno@latest \
   npm:pyright@latest \
   npm:bash-language-server@latest \
   npm:yaml-language-server@latest \
@@ -85,7 +86,7 @@ brew install jdtls
 
 The TypeScript 7 compiler provides the native language server through `tsc --lsp`, so a separate TypeScript language server is not needed
 
-Keep language toolchains and their tightly coupled servers in each project. This includes Dart, Rust and `rust-analyzer`, Deno, Zig and ZLS, Ruby and `ruby-lsp`, Java, project TypeScript, and Python virtual environments
+Deno is required to build and run Peek, so install it before the first Neovim launch. Pin project-specific language toolchains and their tightly coupled servers in each project. This includes Dart, Rust and `rust-analyzer`, Deno, Zig and ZLS, Ruby and `ruby-lsp`, Java, project TypeScript, and Python virtual environments
 
 ### 3. Back up the current Neovim files
 
@@ -117,7 +118,7 @@ git clone git@github.com:jjjacobsen/nvim.git ~/.config/nvim
 nvim
 ```
 
-lazy.nvim installs the plugins on the first launch. On Omarchy, Neovim follows the active Omarchy theme and keeps it transparent. On other systems, it uses the transparent Tokyo Night fallback. SSH, tmux, and Herdr sessions use OSC 52 clipboard forwarding
+lazy.nvim installs and builds the plugins on the first launch. If Peek was installed before Deno, rebuild it with `:Lazy build peek.nvim`. On Omarchy, Neovim follows the active Omarchy theme and keeps it transparent. On other systems, it uses the transparent Tokyo Night fallback. SSH, tmux, and Herdr sessions use OSC 52 clipboard forwarding
 
 ### 6. Optional development dependencies
 

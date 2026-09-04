@@ -33,3 +33,5 @@
 
 - After replacing a mise tool version, the current shell kept the old install directory in `PATH`, so the first native TypeScript LSP check found TypeScript 6 instead of 7
 - Unblocked by running the check through `mise x`, which rebuilt `PATH` from the updated global config. New shells also use the updated path
+- Peek's default webview silently exited because `webview_deno` requires `libwebkit2gtk-4.0.so.37`, while this system provides WebKitGTK 4.1
+- The Peek log only showed exit code 1. Running its bundled `public/webview.js` directly exposed the missing library, and setting Peek's `app` to `chromium` bypassed the incompatible webview
