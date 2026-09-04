@@ -28,3 +28,8 @@
 - `mise x -- hk check --all` failed outside the repo because mise did not load the repo tools. Running it from the repo loaded hk, but hk then failed on a sparse tracked path and missing `stylua`
 - `:Lazy sync` updated existing plugins while recording the new theme plugins. Restored the existing lock entries and plugin checkouts, and kept only the new theme lock entries
 - Mise's `ubi:eclipse-jdtls/eclipse.jdt.ls` backend found JDTLS 1.60.0 but tried a nonexistent GitHub release URL. JDTLS publishes its archive through Eclipse instead, and mise has no first-party registry entry, so it was left for an AUR or project-specific installation
+
+## 2026-09-03
+
+- After replacing a mise tool version, the current shell kept the old install directory in `PATH`, so the first native TypeScript LSP check found TypeScript 6 instead of 7
+- Unblocked by running the check through `mise x`, which rebuilt `PATH` from the updated global config. New shells also use the updated path

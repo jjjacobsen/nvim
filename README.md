@@ -68,8 +68,7 @@ mise use -g \
   npm:bash-language-server@latest \
   npm:yaml-language-server@latest \
   npm:@postgres-language-server/cli@latest \
-  npm:typescript@6.0.3 \
-  npm:typescript-language-server@5.3.0 \
+  npm:typescript@latest \
   marksman@latest \
   taplo@latest
 ```
@@ -83,6 +82,8 @@ omarchy pkg aur add jdtls
 # macOS
 brew install jdtls
 ```
+
+The TypeScript 7 compiler provides the native language server through `tsc --lsp`, so a separate TypeScript language server is not needed
 
 Keep language toolchains and their tightly coupled servers in each project. This includes Dart, Rust and `rust-analyzer`, Deno, Zig and ZLS, Ruby and `ruby-lsp`, Java, project TypeScript, and Python virtual environments
 

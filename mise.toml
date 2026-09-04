@@ -1,6 +1,11 @@
 [tools]
+gitleaks = "latest"
 hk = "latest"
+"npm:prettier" = "latest"
 pkl = "latest"
+stylua = "latest"
+taplo = "latest"
+typos = "latest"
 
 [env]
 HK_MISE = 1
