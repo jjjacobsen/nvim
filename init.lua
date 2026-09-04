@@ -47,6 +47,10 @@ vim.keymap.set("c", "<C-j>", function()
 	local cmdtype = vim.fn.getcmdtype()
 	return (cmdtype == "/" or cmdtype == "?") and "<C-g>" or "<C-j>"
 end, { desc = "Next search result", expr = true })
+vim.keymap.set("c", "<CR>", function()
+	local cmdtype = vim.fn.getcmdtype()
+	return (cmdtype == "/" or cmdtype == "?") and "<CR><Cmd>nohlsearch<CR>" or "<CR>"
+end, { desc = "Confirm search without highlights", expr = true })
 vim.keymap.set("n", "<C-D>", "<C-D>zz", { desc = "Scroll half page down, keep cursor centered" })
 vim.keymap.set("n", "<C-U>", "<C-U>zz", { desc = "Scroll half page up, keep cursor centered" })
 vim.keymap.set("n", "Y", "_y$", { desc = "Yank line contents" })
