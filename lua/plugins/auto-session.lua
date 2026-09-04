@@ -1,6 +1,7 @@
 return {
 	"rmagatti/auto-session",
 	lazy = false,
+	priority = 100,
 
 	---enables autocomplete for opts
 	---@module "auto-session"

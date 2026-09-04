@@ -35,3 +35,8 @@
 - Unblocked by running the check through `mise x`, which rebuilt `PATH` from the updated global config. New shells also use the updated path
 - Peek's default webview silently exited because `webview_deno` requires `libwebkit2gtk-4.0.so.37`, while this system provides WebKitGTK 4.1
 - The Peek log only showed exit code 1. Running its bundled `public/webview.js` directly exposed the missing library, and setting Peek's `app` to `chromium` bypassed the incompatible webview
+
+## 2026-09-04
+
+- A headless Neovim check falsely showed that auto-session still did not restore after fixing plugin priority because auto-session intentionally skips restoration without an attached UI
+- Unblocked by starting Neovim in a detached tmux session with `--listen`, then checking `v:this_session`, `getcwd()`, and the active buffer through `--remote-expr`
