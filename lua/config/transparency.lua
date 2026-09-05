@@ -56,6 +56,10 @@ local groups = {
 	"NotifyDEBUGBorder",
 }
 
-for _, name in ipairs(groups) do
-	make_transparent(name)
+local function apply()
+	for _, name in ipairs(groups) do
+		make_transparent(name)
+	end
 end
+
+return apply
