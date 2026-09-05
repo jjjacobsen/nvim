@@ -38,6 +38,8 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 - nvim-surround
 - peek.nvim
 - indent-blankline.nvim
+- baleia.nvim
+  - Renders ANSI colors in buffers read from standard input
 
 ## Installation
 

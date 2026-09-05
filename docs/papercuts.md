@@ -44,3 +44,14 @@
 - Unblocked by changing to the repository before running the check
 - `omarchy-launch-tui` remained attached while its Ghostty window was open, so a combined launch-and-inspect command timed out before it reached the assertions
 - Unblocked by inspecting the Neovim server and Hyprland client in a separate command. Background the launcher for future automated checks
+
+## 2026-09-05
+
+- A malformed parallel tool call put the Bash command under an empty object key, so schema validation rejected the command before execution
+- Unblocked by sending the Bash command with the required top-level `command` and `timeout` fields
+- Baleia's `version = "*"` install cloned `main` and then failed while switching to the latest tag because Git could not reset the repository's changed submodule layout, which left a mixed worktree
+- Unblocked by tracking Baleia's default branch directly, then removing the broken plugin checkout and reinstalling it
+- The first headless Baleia check rendered colors correctly but timed out because stripping ANSI codes marked the read-only stdin buffer as modified, so `:q` refused to exit
+- Unblocked by processing the small stdin buffer synchronously and clearing its modified flag after Baleia finishes
+- The first `mise x -- hk check --all` ran from `/home/jonah/Work` instead of the Neovim repository, so mise could not resolve the project-pinned hk version
+- Unblocked by changing to `~/.config/nvim` before running the check
