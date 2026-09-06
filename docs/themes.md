@@ -10,4 +10,4 @@ The config registers the theme plugins supplied by Omarchy without loading LazyV
 
 After each theme change, `lua/config/transparency.lua` removes interface background colors so the terminal background remains visible
 
-On systems without the Omarchy theme file, such as macOS, the config uses its original transparent Tokyo Night setup
+On systems without the Omarchy theme file, the config uses its original transparent Tokyo Night setup

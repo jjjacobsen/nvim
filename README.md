@@ -51,13 +51,6 @@ Omarchy already includes Neovim and the required command-line tools. To install 
 omarchy pkg add base-devel fd lazygit ripgrep tree-sitter-cli
 ```
 
-On macOS:
-
-```bash
-brew install --cask font-hack-nerd-font
-brew install neovim fd lazygit ripgrep tree-sitter-cli
-```
-
 Neovim includes Tree-sitter integration and a small set of parsers, but `nvim-treesitter` still needs the CLI and a C compiler to install the additional parsers in this config. See [Tree-sitter dependencies](docs/treesitter.md) for details
 
 ### 2. Install global editor tools with mise
@@ -74,16 +67,6 @@ mise use -g \
   npm:typescript@latest \
   marksman@latest \
   taplo@latest
-```
-
-JDTLS does not have a first-party mise package. Install it only when Java support is needed:
-
-```bash
-# Omarchy
-omarchy pkg aur add jdtls
-
-# macOS
-brew install jdtls
 ```
 
 The TypeScript 7 compiler provides the native language server through `tsc --lsp`, so a separate TypeScript language server is not needed

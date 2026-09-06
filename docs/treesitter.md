@@ -12,14 +12,6 @@ This config also uses `nvim-treesitter` to install parsers for many other langua
 
 The separate Tree-sitter library package is not required by this Neovim config
 
-## macOS
-
-Install `tree-sitter-cli` with Homebrew. Do not install both `tree-sitter` and `tree-sitter-cli` for this config
-
-```bash
-brew install tree-sitter-cli
-```
-
 ## Arch Linux
 
 Install the CLI and standard build tools from the official repositories

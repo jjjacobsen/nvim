@@ -1,12 +1,5 @@
 # Papercuts
 
-## 2026-08-13
-
-- `ts_ls` failed with "Could not find a valid TypeScript installation" after brew upgraded `typescript` to 7.0.2 (native Go compiler, ships no `tsserver.js`), breaking typescript-language-server's bundled fallback
-- Fixed by moving typescript@6.0.3 and typescript-language-server@5.3.0 to mise (`mise use -g npm:...`)
-- New gotcha: mise's npm backend generates an "aube" bin shim that unconditionally overrides `NODE_PATH` with its own isolated paths, so setting `cmd_env.NODE_PATH` alone does nothing
-- Workaround: ts_ls config launches the server directly via `node <mise cli.mjs> --stdio` with `NODE_PATH` pointing at the mise typescript install, both resolved at config load with `mise where`
-
 ## 2026-08-19
 
 - `fff` (dmtrKovalenko/fff) cannot be exercised headlessly: `nvim --headless +"lua require('fff').file_search(...)"` returns "timeout waiting for index scan" even though the filesystem walk completes in <1ms per the Rust log
@@ -23,11 +16,8 @@
 
 ## 2026-09-02
 
-- A macOS fallback check set `HOME` and `XDG_DATA_HOME` in one command, so the shell expanded `XDG_DATA_HOME` from the original home and Lazy used the active plugin directory
-- Unblocked by checking the printed fallback colorscheme directly. Set the temporary home in a separate command before deriving XDG paths in future isolated checks
 - `mise x -- hk check --all` failed outside the repo because mise did not load the repo tools. Running it from the repo loaded hk, but hk then failed on a sparse tracked path and missing `stylua`
 - `:Lazy sync` updated existing plugins while recording the new theme plugins. Restored the existing lock entries and plugin checkouts, and kept only the new theme lock entries
-- Mise's `ubi:eclipse-jdtls/eclipse.jdt.ls` backend found JDTLS 1.60.0 but tried a nonexistent GitHub release URL. JDTLS publishes its archive through Eclipse instead, and mise has no first-party registry entry, so it was left for an AUR or project-specific installation
 
 ## 2026-09-03
 
