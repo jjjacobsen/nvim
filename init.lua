@@ -57,6 +57,11 @@ vim.keymap.set("n", "<C-U>", "<C-U>zz", { desc = "Scroll half page up, keep curs
 vim.keymap.set("n", "Y", "_y$", { desc = "Yank line contents" })
 vim.keymap.set("n", "U", "y$", { desc = "Yank from cursor to end of line" })
 vim.keymap.set("x", "P", '"_dP', { desc = "Paste without replacing clipboard" })
+vim.keymap.set("i", "<M-Left>", "<C-Left>", { desc = "Move one word left" })
+vim.keymap.set("i", "<M-Right>", "<C-Right>", { desc = "Move one word right" })
+vim.keymap.set("i", "<M-Up>", "<Up>", { desc = "Move one line up" })
+vim.keymap.set("i", "<M-Down>", "<Down>", { desc = "Move one line down" })
+vim.keymap.set("i", "<M-BS>", "<C-w>", { desc = "Delete previous word" })
 
 vim.keymap.set("n", "<leader>n", function()
 	local note = vim.fn.expand("~/Documents/obsidian/daily/" .. os.date("%F") .. ".md")
