@@ -1,6 +1,7 @@
 vim.opt.guicursor = ""
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cmdheight = 0
+vim.opt.foldenable = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = false
 vim.opt.number = true
@@ -15,7 +16,6 @@ vim.opt.sessionoptions = {
 	"blank",
 	"buffers",
 	"curdir",
-	"folds",
 	"help",
 	"tabpages",
 	"winsize",
