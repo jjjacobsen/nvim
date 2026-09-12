@@ -69,9 +69,16 @@ mise use -g \
   taplo@latest
 ```
 
+Install Ruby and its language server:
+
+```bash
+mise use -g ruby@latest
+mise use -g gem:ruby-lsp
+```
+
 The TypeScript 7 compiler provides the native language server through `tsc --lsp`, so a separate TypeScript language server is not needed
 
-Deno is required to build and run Peek, so install it before the first Neovim launch. Pin project-specific language toolchains and their tightly coupled servers in each project. This includes Dart, Rust and `rust-analyzer`, Deno, Zig and ZLS, Ruby and `ruby-lsp`, Java, project TypeScript, and Python virtual environments
+Deno is required to build and run Peek, so install it before the first Neovim launch. Pin other project-specific language toolchains and their tightly coupled servers in each project. This includes Dart, Rust and `rust-analyzer`, Deno, Zig and ZLS, Java, project TypeScript, and Python virtual environments
 
 ### 3. Back up the current Neovim files
 
