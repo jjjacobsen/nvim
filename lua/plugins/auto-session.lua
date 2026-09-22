@@ -2,7 +2,20 @@ local function open_start_file()
 	local file = vim.env.NVIM_START_FILE
 	if file then
 		vim.api.nvim_set_current_dir(vim.fn.expand("~/Documents/obsidian"))
-		vim.cmd.edit(vim.fn.fnameescape(file))
+		local function open_note()
+			vim.cmd.edit(vim.fn.fnameescape(file))
+		end
+		if vim.bo.filetype == "oil" and not vim.b.oil_ready then
+			vim.api.nvim_create_autocmd("User", {
+				pattern = "OilEnter",
+				once = true,
+				callback = function()
+					vim.schedule(open_note)
+				end,
+			})
+		else
+			open_note()
+		end
 	end
 end
 
