@@ -1,6 +1,6 @@
 [tools]
 gitleaks = "latest"
-hk = "latest"
+hk = "2.0.1"
 "npm:prettier" = "latest"
 pkl = "latest"
 stylua = "latest"

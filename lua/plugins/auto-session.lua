@@ -1,6 +1,7 @@
 local function open_start_file()
 	local file = vim.env.NVIM_START_FILE
 	if file then
+		vim.api.nvim_set_current_dir(vim.fn.expand("~/Documents/obsidian"))
 		vim.cmd.edit(vim.fn.fnameescape(file))
 	end
 end
@@ -14,6 +15,8 @@ return {
 	---@module "auto-session"
 	---@type AutoSession.Config
 	opts = {
+		auto_restore = vim.env.NVIM_START_FILE == nil,
+		auto_save = vim.env.NVIM_START_FILE == nil,
 		suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
 		post_restore_cmds = {
 			open_start_file,
