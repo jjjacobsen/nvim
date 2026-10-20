@@ -29,7 +29,6 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 - lazygit.nvim
   - plenary.nvim (shared)
 - gitsigns.nvim
-- fff
 - telescope.nvim
   - plenary.nvim (shared)
   - telescope-fzf-native.nvim
