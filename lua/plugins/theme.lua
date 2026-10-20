@@ -108,6 +108,11 @@ specs[#specs + 1] = {
 
 			vim.cmd.colorscheme(colorscheme)
 			require("config.transparency")()
+
+			if vim.fn.readfile(omarchy_theme_name)[1] == "mapquest" then
+				vim.api.nvim_set_hl(0, "Visual", { fg = "#ecd3a1", bg = "#3c4747" })
+				vim.api.nvim_set_hl(0, "VisualNOS", { link = "Visual" })
+			end
 		end
 
 		apply_theme()
