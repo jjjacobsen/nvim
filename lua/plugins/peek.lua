@@ -13,7 +13,7 @@ return {
 			end
 			return validate(name, ...)
 		end
-		require("peek").setup({ app = "chromium" })
+		require("peek").setup({ app = "chromium", theme = vim.o.background })
 		vim.validate = validate
 		vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
 		vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
