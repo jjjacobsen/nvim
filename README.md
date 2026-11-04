@@ -44,6 +44,19 @@ Minimal, effective, and stylistic neovim setup. In a world of VSCode clones, the
 
 ### 1. Install system dependencies
 
+#### macOS
+
+Install the compiler tools and command-line dependencies:
+
+```bash
+xcode-select --install
+brew install neovim fd lazygit ripgrep tree-sitter-cli jdtls
+```
+
+Skip `xcode-select --install` if the Command Line Tools are already installed
+
+#### Omarchy
+
 Omarchy already includes Neovim and the required command-line tools. To install or repair them:
 
 ```bash
@@ -63,7 +76,7 @@ mise use -g \
   npm:bash-language-server@latest \
   npm:yaml-language-server@latest \
   npm:@postgres-language-server/cli@latest \
-  npm:typescript@latest \
+  npm:typescript@7 \
   marksman@latest \
   taplo@latest
 ```
@@ -75,9 +88,9 @@ mise use -g ruby@latest
 mise use -g gem:ruby-lsp
 ```
 
-The TypeScript 7 compiler provides the native language server through `tsc --lsp`, so a separate TypeScript language server is not needed
+The TypeScript 7 compiler provides the native language server through `tsc --lsp`, so a separate TypeScript language server is not needed. Check it with `mise x -- tsc --version`. TypeScript 6 and earlier do not support `--lsp`. Restart existing shells and Neovim after changing the global tool version
 
-Deno is required to build and run Peek, so install it before the first Neovim launch. Pin other project-specific language toolchains and their tightly coupled servers in each project. This includes Dart, Rust and `rust-analyzer`, Deno, Zig and ZLS, Java, project TypeScript, and Python virtual environments
+Deno is required to build and run Peek, so install it before the first Neovim launch. Peek uses the default browser on macOS and `chromium` on Linux. Install Chromium on Linux if it is not already available. Pin other project-specific language toolchains and their tightly coupled servers in each project. This includes Dart, Rust and `rust-analyzer`, Deno, Zig and ZLS, Java, project TypeScript, and Python virtual environments
 
 ### 3. Back up the current Neovim files
 
