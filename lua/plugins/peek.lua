@@ -14,7 +14,7 @@ return {
 			return validate(name, ...)
 		end
 		require("peek").setup({
-			app = vim.fn.has("macunix") == 1 and "browser" or "chromium",
+			app = "chromium",
 			theme = vim.o.background,
 		})
 		vim.validate = validate
