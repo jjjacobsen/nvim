@@ -1,4 +1,13 @@
 local M = {}
+
+if vim.fn.has("linux") == 0 or vim.fn.executable("systemctl") == 0 or vim.fn.executable("journalctl") == 0 then
+	function M.status()
+		return ""
+	end
+	return M
+end
+
+local available = true
 local vault = vim.fn.expand("~/Documents/obsidian/")
 local service = "obsidian-headless-sync.service"
 local session
@@ -106,7 +115,7 @@ local function start()
 	-- Replay only events since this observation began, never an older invocation's health
 	local since = string.format("@%d.%06d", seconds, micros)
 	current.show = vim.system(
-		{ "systemctl", "--user", "show", service, "--property=InvocationID,ActiveState" },
+		{ "systemctl", "--user", "show", service, "--property=InvocationID,ActiveState,LoadState" },
 		{
 			text = true,
 			timeout = 5000,
@@ -116,6 +125,11 @@ local function start()
 				return
 			end
 			current.show = nil
+			if result.stdout:match("LoadState=not%-found") then
+				available = false
+				update("unknown")
+				return
+			end
 			if result.code == 0 then
 				current.invocation = result.stdout:match("InvocationID=([%x]+)")
 				local active = result.stdout:match("ActiveState=(%a+)")
@@ -186,7 +200,7 @@ local function refresh()
 			break
 		end
 	end
-	if loaded and not session then
+	if available and loaded and not session then
 		start()
 	elseif not loaded and session then
 		stop()
@@ -196,7 +210,7 @@ end
 
 function M.status()
 	local win = vim.g.statusline_winid or vim.api.nvim_get_current_win()
-	if not is_vault(vim.api.nvim_win_get_buf(win)) then
+	if not available or not is_vault(vim.api.nvim_win_get_buf(win)) then
 		return ""
 	end
 	local icons = { syncing = frames[frame], synced = "✓", error = "⚠", unknown = "·" }
