@@ -11,6 +11,9 @@ vim.opt.showcmd = false
 vim.opt.showmode = false
 vim.opt.signcolumn = "number"
 vim.opt.termguicolors = true
+vim.opt.title = true
+vim.opt.titlelen = 0
+vim.opt.titlestring = [[nvim%{empty(expand('%:t')) ? '' : ' - ' .. expand('%:t')}]]
 vim.opt.undofile = true
 vim.opt.sessionoptions = {
 	"blank",
