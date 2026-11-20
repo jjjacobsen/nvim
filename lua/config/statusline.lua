@@ -20,8 +20,6 @@ function M.mode()
 	return modes[vim.fn.mode()]
 end
 
-require("config.obsidian_sync")
 vim.opt.statusline = "%#ModeMsg# %{v:lua.require('config.statusline').mode()} %* %<%t %m"
-	.. "%{%v:lua.require('config.obsidian_sync').status()%}"
 
 return M
